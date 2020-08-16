@@ -1,0 +1,176 @@
+﻿// Simple C# program Example
+
+// namespace
+
+
+// using directive
+using system; // System is a namespace !
+
+// Comments
+single line and multiline comments
+Documentation comments: contains XML text that can be used to produce program documentation.
+https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/xmldoc/
+
+
+// A C# program consists of one or more type declarations.
+
+// Identifiers
+Identifiers are character strings used to name things such as variables, 
+methods, parameters and others.
+
+	Side Topic: PascalCasing and camelCasing
+
+- Allowed at any position: The alphabetic and underscore characters 
+	(a through z, A through Z, and _)
+
+- Not allowed in the first position: Digits, but are allowed everywhere else.
+- Only allowed in the first position: The @ character but not at any other position.
+	Although allowed, its use is generally discouraged.
+- Identifiers are case-sensitive, so myName and MyName are different variables
+
+// Keywords
+Reserved keywords
+- cannot be used as identifiers 
+- are Lowercase
+
+Contextual keywords: when used in certain language constructs they have particular meanings.
+contextual keywords can be used as identifiers in other parts of the code.
+
+// Main: Starting/entry point of a program
+
+- The starting point of execution of every C# program is at the first instruction in Main.
+- The name Main must be capitalized
+
+// Whitespace
+- Space
+- Tab
+- New line
+- Carriage return
+
+https://stackoverflow.com/questions/3091524/what-are-carriage-return-linefeed-and-form-feed
+
+// Statements
+- describes a type or tell the program to perform an action
+- A simple statement is terminated by a semicolon
+
+// Blocks
+is a sequence of zero/more statements enclosed by a matching set of curly braces;
+it acts as a single syntactic statement.
+
+{
+	int var1 = 5;
+	Console.WriteLine("var1 is {0}", var1);
+}
+
+Some important things about block:
+
+- You can use a block whenever the syntax requires a statement but the action you
+need requires more than one simple statement.
+
+- Certain program constructs require blocks. In these constructs, you cannot substitute
+a simple statement for the block.
+
+- Although a simple statement is terminated by a semicolon, a block is not followed
+by a semicolon. (Actually, the compiler will allow it because it’s parsed as an empty
+statement—but it’s not good style.)
+
+
+// String formatting
+
+- String interpolation
+int var1 = 5;
+int var2 = 9;
+Console.WriteLine($"var1 is {var1} and the value of {var2}");
+
+Console.WriteLine("var1 is {0} and the value of {1}, both values are {0}{1}.", 3, 6);
+
+
+--------------------------------
+| Types, Storage and Variables |
+--------------------------------
+A C# Program Is a bundle of Type Declarations
+
+What is a type: is a template for creating a data structure!
+
+- It has a name
+- A data strcuture to contain its data members
+- Behaviours (Function) and contraints (Properties)
+
+data structure ??
+A way of keeping the data, 
+Stack example: Dawaat me khaany ki plates
+
+Creating an actual object > instantiating a type
+
+Simple type: Can store only a single data item, int,char,bool
+Array type: Can store mulitple data itmes of the same type or diff type, 
+indivual elements are accessed using index numbers
+Complex Types: Classes, Strcut, Enums. indivual members are accessed using their name.
+
+//Data Members and Function Members
+Data Members: contains data
+Function Members: contains executable code
+
+https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/operators/type-testing-and-cast
+https://stackoverflow.com/questions/983030/type-checking-typeof-gettype-or-is
+
+// Predefined Types (simple types)
+int, float, double, decimal, char, bool, string
+nullable types
+alias, range, default value
+
+https://stackoverflow.com/questions/589920/default-value-of-a-variable-at-the-time-of-declaration-in-c-sharp-and-vb
+https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/default-values
+https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/operators/default#default-operator
+
+// built-in Types (complex types)
+object, string, dynamic
+can be null, because its a reference
+
+https://stackoverflow.com/questions/13464641/c-sharp-predefined-types-vs-primitive-types
+https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/reference-types#the-dynamic-type
+
+//User-Defined Types
+Class types, struct types ,array types ,enum types ,delegate types ,interface types
+
+//Stack and Heap
+Stack:
+A running program uses two regions of memory to store data: the stack and the heap.
+how much memory to use depends on the data types used
+
+- The values of certain types of variables
+- The program’s current execution environment
+- Parameters passed to methods
+
+Stack uses LIFO
+https://www.cs.usfca.edu/~galles/visualization/StackArray.html
+
+Heap:
+An area of memory where blocks of memory are allocated to store data.
+data can be stored and removed from the heap in any order. 
+
+Your program can store items in the heap, it cannot explicitly delete them. Instead, the CLR’s
+garbage collector (GC) automatically cleans up when the 
+- your code can no longer access it
+- the data is marked as garbage collectible
+- data is orphaned
+
+//Value Types and Reference Types
+Value Types:
+single data stored, usually stack,
+
+https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/value-types
+
+Referece Types:
+Two segments of memory required to store all the data
+- actual data > on the heap
+- reference > on the stack
+
+https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/reference-types
+
+//Static Typing, Implicit Typing and the dynamic Keyword
+
+
+//Nullable types
+very usefull when interacting with db
+
