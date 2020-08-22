@@ -1,0 +1,83 @@
+﻿Reference Vs Value Types
+-Example Person class and Person Struct
+-Storage difference Stack vs Heap
+-The way the references or values are handled during copying 
+	or passing around in the methods
+
+Classes
+-Inheritance
+-Access Modifiers
+-Members of the class: Data members & Function Members i.e. Fields (Properties) and Methods 
+-Constructors
+-Object Initializer
+-Overloading
+-Instance versus static members
+
+
+Misc Topics
+-Nullable types (Val vs Ref)
+-Indices and Ranges (C# 8)// use .Net Core 3 to run C# 8 example
+
+---------------------------
+A parameter is the variable listed inside the parentheses in the function definition.
+An argument is the value that is sent to the function when it is called.
+---------------------------
+
+-Method Parameter modifiers (Passing by Value (default) and by Reference (ref,in,out))
+-Passing arguments by value:
+	By default, arguments in C# are passed by value, a copy of the value is created when passed to the method (applies to all the value types) 
+	Passing a reference-type argument by value copies the reference, but not the object.
+	Value of the variable must be assigned
+
+-Passing arguments by ref:
+	ref or memory address is passed, no copy of value
+	Value of the variable must be assigned
+
+-Passing arguments by out:
+	much like the ref, but value assignment before passing into the function is optional
+	values must be assigned after it comes out of the function
+
+-Common Usage out variables:
+out modifier is most commonly used to get multiple return values back from a method (populating an object)
+
+-out variables and discards // C# 7
+
+-Passing arguments by in:
+	passed by reference, similar to ref modifier, arguments values cannot be changed doing so will generate compile time error
+	Usage: Passing big Structs or value types, so there is no need for copy of value (avoid the overhead of copying),
+	also when the args are only need to be read (protect the orginal data)
+
+-Optional parameters //acts as default value
+void PrintName (string name = "Iqbal") { Console.WriteLine (name); }
+
+-Named arguments // if you want to change the order of the args //or make it more clear
+PrintName("Zahid");
+PrintName(name: "Zahid");
+
+--Ref Locals //C# 7 --- Take a look at it again
+ make a reference to a field,array element or local variable
+
+//ternary operator
+string name = alienName == "Dave" ?  "New Name" : "Default Alien";
+ 
+--Null Operators
+Null-Coalescing Operator:
+
+//only assign value of "alienName" when it's not null else assign default value
+string name = alienName ?? "Default Alien";
+
+Null-Coalescing Assignment Operator (C# 8):
+if (name == null) name = "Default Alien";
+name ??=  "Default Alien"; //for replacing the above statement
+
+Null-Conditional Operator:// C# 6 ?
+The ?. operator is the null-conditional or “Elvis” operator (after the Elvis emoticon)
+If the operand on the left is null, the expression evaluates to null instead of throwing a NullReferenceException
+
+System.Text.StringBuilder sb = null;
+string s = sb?.ToString(); // No error instead evaluates to null
+
+
+pattern Matching > https://docs.microsoft.com/en-us/dotnet/csharp/pattern-matching
+Switching on types: //C# 7
+switch expressions: //C# 8

@@ -1,0 +1,5 @@
+﻿Reference Vs Value Types
+
+https://stackoverflow.com/questions/2310103/why-c-sharp-structs-cannot-be-inherited
+https://stackoverflow.com/questions/13049/whats-the-difference-between-struct-and-class-in-net
+https://docs.microsoft.com/en-us/dotnet/standard/design-guidelines/choosing-between-class-and-struct
