@@ -1,0 +1,74 @@
+Generics:
+- A class, Method, Delegate can be Generic
+- reusability with a template that contains placeholder types i.e <T>.
+- can increase type safety and reduce casting and boxing.
+- C# generics and C++ templates are similar concepts, but they work differently.
+- Technically, 
+--we say that Stack<T> is an open type,
+--whereas Stack<int> is a closed type.
+
+Generic Stack Class:
+following statement is illegal:
+var stack = new Stack<T>(); // Illegal: What is T?
+// untill the above statement is in a class or method that defins T as a type parameter.
+
+For example:
+Stack<int> fills in the type parameter T with the type argument int, implicitly creating
+a type on the fly (the synthesis occurs at runtime).
+Compile time error > if you push a string
+
+Generic Swap Method:
+static void Swap<T> (ref T a, ref T b)
+{
+	T temp = a;
+	a = b;
+	b = temp;
+}
+//Swap<T> is called as follows:
+int x = 5;
+int y = 10;
+Swap (ref x, ref y);// Swap<int> (ref x, ref y); // T type is generally infered by the compiler if there is ambiguity then you cna specfiy the type
+
+
+Confusion/ Question:
+When to use <> for generics ? does it mean that Im defining a generic type placeholder ?
+
+
+Delegates:
+https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/delegates/
+- A delegate is an object that knows how to call a method.
+- Can refer/point to a function (Like a c function pointer)
+- can refer and invoke multiple functions
+- When defined it looks like a function prototype in c language
+- Delegates are immutable, so when you call += or -=, you’re in fact creating a new delegate instance
+- Hierarchy: System.Object > System.Delegate > System.MulticastDelegate
+
+Delegates Usage:
+- Plug-in methods: A delegate variable/instance is assigned a method at runtime.
+- Delegates allow methods to be passed as parameters.
+
+Generic Delegate Types:
+- A delegate type can contain generic type parameters:
+public delegate T Transformer<T> (T arg);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
